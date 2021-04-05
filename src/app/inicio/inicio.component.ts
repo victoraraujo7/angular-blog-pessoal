@@ -43,25 +43,25 @@ export class InicioComponent implements OnInit {
 
   findUserById(){
     this.authService.getByIdUser(this.idUser).subscribe((resp) => {
-      this.user = resp;
+      this.user = resp
     })
   }
 
   findAllPostagem(){
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp;
+      this.listaPostagens = resp
     })
   }
 
   getAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
-      this.listaTemas = resp;
+      this.listaTemas = resp
     })
   }
 
   findByIdTema(){
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp;
+      this.tema = resp
     })
   }
 
@@ -72,10 +72,10 @@ export class InicioComponent implements OnInit {
     this.postagem.usuario.id = this.idUser
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-      this.postagem = resp;
-      alert('Postagem realizada com sucesso!');
-      this.postagem = new Postagem();
-      this.findAllPostagem();
+      this.postagem = resp
+      alert('Postagem realizada com sucesso!')
+      this.postagem = new Postagem()
+      this.findAllPostagem()
     })
   }
 
